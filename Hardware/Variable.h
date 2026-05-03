@@ -27,7 +27,7 @@ extern uint16_t Battery;
 extern uint16_t Battery_count;
 extern uint16_t Battery_temp;
 extern uint32_t Battery_temp_sum;
-extern uint16_t Average_Battety;
+extern uint16_t Average_Battery;
 extern uint8_t Battery_Bit;
 
 #endif

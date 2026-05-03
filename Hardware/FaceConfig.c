@@ -34,9 +34,9 @@ void Face_Config(void)
 	if(Battery_Bit)
 	{
 		OLED_ShowString(0,0,"Power:",OLED_6X8);
-		if(Average_Battety>=110) OLED_ShowString(36,0,"Charging",OLED_6X8);
-		else if(Average_Battety>=100)OLED_ShowNum(36,0,Average_Battety,3,OLED_6X8);
-		else OLED_ShowNum(36,0,Average_Battety,2,OLED_6X8);
+		if(Average_Battery>=110) OLED_ShowString(36,0,"Charging",OLED_6X8);
+		else if(Average_Battery>=100)OLED_ShowNum(36,0,Average_Battery,3,OLED_6X8);
+		else OLED_ShowNum(36,0,Average_Battery,2,OLED_6X8);
 	}
 
     OLED_Update();

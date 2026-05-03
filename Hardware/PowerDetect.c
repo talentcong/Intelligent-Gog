@@ -19,7 +19,6 @@ void PowerDetect_Init(void)
 
     TIM_ITConfig(TIM3, TIM_IT_Update, ENABLE);
 
-    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
     NVIC_InitTypeDef NVIC_InitStructure;
     NVIC_InitStructure.NVIC_IRQChannel = TIM3_IRQn;
     NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
@@ -34,7 +33,9 @@ void PowerDetect_Init(void)
 //AD_GetValue() 返回12位ADC值(0~4095)，经计算后转换为电压值并映射为电量
 uint16_t GetBattery(void)
 {
-    Battery = (uint16_t)(3.3f * ((float)AD_GetValue() / 4096.0f) * 100.0f - 300.0f);
+    float val = 3.3f * ((float)AD_GetValue() / 4096.0f) * 100.0f - 300.0f;
+    if(val < 0) val = 0;
+    Battery = (uint16_t)val;
     return Battery;
 }
 
@@ -47,7 +48,7 @@ void GetAverage_Battery(void)
     }
     else
     {
-        Average_Battety=Battery_temp_sum/100;
+        Average_Battery=Battery_temp_sum/100;
         Battery_count=0;
     }
 }

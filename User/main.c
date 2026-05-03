@@ -11,6 +11,7 @@ int main(void)
 	OLED_Init(); 
 	Voice_Init();
 	PetAction_Init();
+	PowerDetect_Init();
 
 	OLED_Clear();
     OLED_ShowImage(0, 0, 128, 64, Face_eyes);
