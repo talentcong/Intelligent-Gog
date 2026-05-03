@@ -4,6 +4,7 @@
 #include "Delay.h"
 #include "FaceConfig.h"
 #include "Voiceinput.h"
+#include "PowerDetect.h"
 
 int main(void)
 {
@@ -19,5 +20,15 @@ int main(void)
 		Face_Config();
 		PetAction_Perform();
 	}
+}
+
+//TIM3中断服务函数，每20ms调用一次，用于电池电压均值采样
+void TIM3_IRQHandler(void)
+{
+    if(TIM_GetITStatus(TIM3, TIM_IT_Update) == SET)
+    {
+        GetAverage_Battery();
+        TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
+    }
 }
 

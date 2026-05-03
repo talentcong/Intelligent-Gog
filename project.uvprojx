@@ -755,6 +755,16 @@
               <FileType>5</FileType>
               <FilePath>.\Hardware\FaceConfig.h</FilePath>
             </File>
+            <File>
+              <FileName>PowerDetect.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Hardware\PowerDetect.c</FilePath>
+            </File>
+            <File>
+              <FileName>PowerDetect.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Hardware\PowerDetect.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

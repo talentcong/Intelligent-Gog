@@ -30,6 +30,15 @@ void Face_Config(void)
             break;
     }
 
+    /*电量处理*/
+	if(Battery_Bit)
+	{
+		OLED_ShowString(0,0,"Power:",OLED_6X8);
+		if(Average_Battety>=110) OLED_ShowString(36,0,"Charging",OLED_6X8);
+		else if(Average_Battety>=100)OLED_ShowNum(36,0,Average_Battety,3,OLED_6X8);
+		else OLED_ShowNum(36,0,Average_Battety,2,OLED_6X8);
+	}
+
     OLED_Update();
 }
 

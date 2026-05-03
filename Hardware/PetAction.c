@@ -206,5 +206,10 @@ void PetAction_Judgement(void)
             FaceMode=FACE_HAPPY;
             break;
         }
+        case 0x50://切换电池显示
+        {
+            Battery_Bit = !Battery_Bit;
+            break;
+        }
     }
 }
