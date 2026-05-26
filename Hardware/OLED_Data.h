@@ -29,6 +29,7 @@ extern const uint8_t Face_sleep[];
 extern const uint8_t Face_stare[];
 extern const uint8_t Face_very_happy[];
 extern const uint8_t Face_hello[];
+extern const uint8_t Battery_Icon[];
 /*按照上面的格式，在这个位置加入新的图像数据声明*/
 //...
 
